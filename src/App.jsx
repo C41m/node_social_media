@@ -11,8 +11,19 @@ import LeftBar from "./components/leftBar/leftBar";
 import NavBar from "./components/navbar/NavBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile"
+import { Navigate } from "react-router-dom";
 
 function App() {
+
+  const currentUser = false;
+  
+  const ProtectRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />
+    }
+    return children
+  }
+
   const Layout = () => {
     return (
       <div>
@@ -26,10 +37,17 @@ function App() {
     )
   }
 
+
+
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: (
+        <ProtectRoute>
+          <Layout />
+        </ProtectRoute>
+      ),
       children: [
         {
           path: "/",
