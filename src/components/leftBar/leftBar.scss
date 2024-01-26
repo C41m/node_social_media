@@ -1,0 +1,21 @@
+.leftbar {
+  .container {
+    .menu {
+      .user {
+        
+      }
+
+      .item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}

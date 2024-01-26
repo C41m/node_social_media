@@ -9,7 +9,7 @@
   .left {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 
     span {
       color: darkblue;
@@ -49,9 +49,6 @@
         height: 50px;
         border-radius: 50%;
         object-fit: cover;
-      }
-
-      span {
       }
     }
   }
