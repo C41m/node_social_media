@@ -1,9 +1,7 @@
-import "./leftBar.scss"
+import "./leftBar.scss";
 
 const leftBar = () => {
-  return (
-    <div className="leftBar">leftBar</div>
-  )
-}
+  return <div className="leftBar">leftBar</div>;
+};
 
-export default leftBar
+export default leftBar;

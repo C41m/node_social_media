@@ -1,28 +1,23 @@
-import "/app.scss"
-import Login from "./pages/login/Login"
+import "/app.scss";
+import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import {
-  createBrowserRouter,
-  Outlet,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RightBar from "./components/rightBar/RightBar";
 import LeftBar from "./components/leftBar/leftBar";
 import NavBar from "./components/navbar/NavBar";
 import Home from "./pages/home/Home";
-import Profile from "./pages/profile/Profile"
+import Profile from "./pages/profile/Profile";
 import { Navigate } from "react-router-dom";
 
 function App() {
+  const currentUser = true;
 
-  const currentUser = false;
-  
   const ProtectRoute = ({ children }) => {
     if (!currentUser) {
-      return <Navigate to="/login" />
+      return <Navigate to="/login" />;
     }
-    return children
-  }
+    return children;
+  };
 
   const Layout = () => {
     return (
@@ -34,11 +29,8 @@ function App() {
           <RightBar />
         </div>
       </div>
-    )
-  }
-
-
-
+    );
+  };
 
   const router = createBrowserRouter([
     {
@@ -51,12 +43,12 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />
+          element: <Home />,
         },
         {
           path: "/profile/:id",
-          element: <Profile />
-        }
+          element: <Profile />,
+        },
       ],
     },
     {
