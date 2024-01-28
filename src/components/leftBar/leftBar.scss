@@ -1,4 +1,14 @@
 .leftbar {
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  width: 300px;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .container {
     padding: 20px;
 

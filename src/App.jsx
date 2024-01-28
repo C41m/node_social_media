@@ -1,13 +1,13 @@
-import "/app.scss";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import RightBar from "./components/rightBar/RightBar";
-import LeftBar from "./components/leftBar/leftBar";
-import NavBar from "./components/navbar/NavBar";
-import Home from "./pages/home/Home";
-import Profile from "./pages/profile/Profile";
-import { Navigate } from "react-router-dom";
+import '/app.scss';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import RightBar from './components/rightBar/RightBar';
+import LeftBar from './components/leftBar/leftBar';
+import NavBar from './components/navbar/NavBar';
+import Home from './pages/home/Home';
+import Profile from './pages/profile/Profile';
+import { Navigate } from 'react-router-dom';
 
 function App() {
   const currentUser = true;
@@ -23,9 +23,11 @@ function App() {
     return (
       <div>
         <NavBar />
-        <div style={{ display: "flex" }}>
+        <div style={{ display: 'flex' }}>
           <LeftBar />
-          <Outlet />
+          <div className='body' style={{ flex: 6 }}>
+            <Outlet />
+          </div>
           <RightBar />
         </div>
       </div>
@@ -34,7 +36,7 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: '/',
       element: (
         <ProtectRoute>
           <Layout />
@@ -42,21 +44,21 @@ function App() {
       ),
       children: [
         {
-          path: "/",
+          path: '/',
           element: <Home />,
         },
         {
-          path: "/profile/:id",
+          path: '/profile/:id',
           element: <Profile />,
         },
       ],
     },
     {
-      path: "/login",
+      path: '/login',
       element: <Login />,
     },
     {
-      path: "/register",
+      path: '/register',
       element: <Register />,
     },
   ]);
