@@ -9,7 +9,7 @@ import Gaming from '../../assets/controle.png';
 import Gallery from '../../assets/galeria.png';
 import Messages from '../../assets/mensagens.png';
 import Donation from '../../assets/doacao.png';
-
+import Tutorial from '../../assets/tutorial.png';
 
 const leftBar = () => {
   return (
@@ -18,50 +18,64 @@ const leftBar = () => {
         <div className="menu">
           <div className="user">
             <img
-            // src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            // alt=""
+              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
             />
             <span>John Doe</span>
           </div>
-          <div className="item">
-            <img src={Friends} alt="" />
-            <span>Amigos</span>
+          <div className="menu">
+            <div className="item">
+              <img src={Friends} alt="" />
+              <span>Amigos</span>
+            </div>
+            <div className="item">
+              <img src={Groups} alt="" />
+              <span>Grupos</span>
+            </div>
+            <div className="item">
+              <img src={Market} alt="" />
+              <span>Marketplace</span>
+            </div>
+            <div className="item">
+              <img src={Video} alt="" />
+              <span>Videos</span>
+            </div>
+            <div className="item">
+              <img src={Memories} alt="" />
+              <span>Memórias</span>
+            </div>
           </div>
-          <div className="item">
-            <img src={Groups} alt="" />
-            <span>Grupos</span>
+          <hr />
+          <div className="menu">
+            <span>Seus Atalhos</span>
+            <div className="item">
+              <img src={Events} alt="" />
+              <span>Eventos</span>
+            </div>
+            <div className="item">
+              <img src={Gaming} alt="" />
+              <span>Jogos</span>
+            </div>
+            <div className="item">
+              <img src={Gallery} alt="" />
+              <span>Galeria</span>
+            </div>
+            <div className="item">
+              <img src={Messages} alt="" />
+              <span>Mensagens</span>
+            </div>
           </div>
-          <div className="item">
-            <img src={Market} alt="" />
-            <span>Marketplace</span>
-          </div>
-          <div className="item">
-            <img src={Video} alt="" />
-            <span>Videos</span>
-          </div>
-          <div className="item">
-            <img src={Memories} alt="" />
-            <span>Memórias</span>
-          </div>
-          <div className="item">
-            <img src={Events} alt="" />
-            <span>Eventos</span>
-          </div>
-          <div className="item">
-            <img src={Gaming} alt="" />
-            <span>Jogos</span>
-          </div>
-          <div className="item">
-            <img src={Gallery} alt="" />
-            <span>Galeria</span>
-          </div>
-          <div className="item">
-            <img src={Messages} alt="" />
-            <span>Mensagens</span>
-          </div>
-          <div className="item">
-            <img src={Donation} alt="" />
-            <span>Doaçao</span>
+          <hr />
+          <div className="menu">
+            <span>Outros</span>
+            <div className="item">
+              <img src={Donation} alt="" />
+              <span>Doações</span>
+            </div>
+            <div className="item">
+              <img src={Tutorial} alt="" />
+              <span>Tutoriais</span>
+            </div>
           </div>
         </div>
       </div>
