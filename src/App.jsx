@@ -8,6 +8,7 @@ import NavBar from './components/navbar/NavBar';
 import Home from './pages/home/Home';
 import Profile from './pages/profile/Profile';
 import { Navigate } from 'react-router-dom';
+import './style.scss';
 
 function App() {
   const currentUser = true;
@@ -21,11 +22,11 @@ function App() {
 
   const Layout = () => {
     return (
-      <div>
+      <div className="theme-dark">
         <NavBar />
         <div style={{ display: 'flex' }}>
           <LeftBar />
-          <div className='body' style={{ flex: 6 }}>
+          <div className="body" style={{ flex: 6 }}>
             <Outlet />
           </div>
           <RightBar />
