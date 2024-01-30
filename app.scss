@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import './src/style.scss';
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -7,5 +8,18 @@
   .body {
     max-width: 1366px;
     margin: 0px auto;
+    position: relative;
+  }
+  .body::before {
+    @include themify($themes) {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -9999px;
+      right: -9999px;
+      background-color: themed('bg');
+      z-index: -1000;
+    }
   }
 }
