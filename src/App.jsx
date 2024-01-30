@@ -9,20 +9,17 @@ import Home from './pages/home/Home';
 import Profile from './pages/profile/Profile';
 import { Navigate } from 'react-router-dom';
 import './style.scss';
+import { useContext } from 'react';
+import { DarkModeContext } from './context/darkModeContext';
 
 function App() {
   const currentUser = true;
 
-  const ProtectRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    }
-    return children;
-  };
+  const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
     return (
-      <div className="theme-dark">
+      <div className={`theme-${darkMode ? 'dark' : 'light'}`}>
         <NavBar />
         <div className="body" style={{ display: 'flex' }}>
           <LeftBar />
@@ -33,6 +30,13 @@ function App() {
         </div>
       </div>
     );
+  };
+
+  const ProtectRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+    return children;
   };
 
   const router = createBrowserRouter([
