@@ -5,8 +5,12 @@ import ShareIcon from '@mui/icons-material/Share';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import Comments from '../comments/Comments';
+import { useState } from 'react';
 
 const Post = ({ post }) => {
+  const [commentOpen, setCommentOpen] = useState(false);
+
   const liked = false;
 
   return (
@@ -40,7 +44,7 @@ const Post = ({ post }) => {
             )}
             <span>12 Gostei</span>
           </div>
-          <div className="item">
+          <div className="item" onClick={()=>setCommentOpen(!commentOpen)}>
             <ChatOutlinedIcon className="icon" />
             <span>12 Comentários</span>
           </div>
@@ -49,6 +53,7 @@ const Post = ({ post }) => {
             <span>12 Compartilhamentos</span>
           </div>
         </div>
+        {commentOpen && <Comments />}
       </div>
     </div>
   );
